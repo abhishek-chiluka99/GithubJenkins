@@ -6,6 +6,13 @@ pipeline {
                 // Use Maven to build your code
                  echo "Building your code"
             }
+            post{
+                success{
+                    mail to: "abhichilua5@gmail.com",
+                    subject: "Build status file",
+                    body: "Build status"
+                }
+            }
         }
         stage('Unit and Integration Tests') {
             steps {
