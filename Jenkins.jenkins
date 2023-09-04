@@ -36,14 +36,6 @@ pipeline {
                 // Run integration tests on staging
                 echo "Integration test and stages"
             }
-
-            post{
-                success{
-                    mail to: "abhichilua5@gmail.com",
-                    subject: "Build status file",
-                    body: "Build status"
-                }
-            }
         }
         stage('Deploy to Production') {
             steps {
